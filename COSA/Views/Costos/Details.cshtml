@@ -1,0 +1,42 @@
+﻿@model COSA.Models.Costos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Costos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hasta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hasta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2>Login Movi-Sancocho-Star</h2>
+    <div class="text-danger">
+        @ViewBag.Error
+    </div>
+    <form action="@Url.Content("~/Sesion/LogIn")" method="post">
+        <div class="form-group col">
+            <label>Cedula</label><br />
+            <input type="number" class="form-control" name="cedula" required />
+        </div>
+        <div class="form-group col">
+            <label>Contraseña </label><br />
+            <input type="password" class="form-control" name="contrasena" required />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Iniciar" class="btn btn-info" />
+            <a href="~/Home/Index" class="btn btn-danger">Cancelar</a>
+        </div>
+    </form>
+</div>

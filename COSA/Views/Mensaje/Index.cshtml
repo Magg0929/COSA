@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPersona.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    <h2>Envia mensajes<h2>
+    <div class="text-danger">
+        @ViewBag.Error
+    </div>
+    <form action="@Url.Content("~/Mensaje/EnvioMensaje")" method="post">
+        <div class="form-group">
+            <label>Selecciona tu telefono</label><br />
+            @Html.DropDownList("Origen", null, htmlAttributes: new { @class = "form-control", @Name = "origen" })
+
+            <br />
+            <label>Contactos</label><br />
+            @Html.DropDownList("Origen2", null, htmlAttributes: new { @class = "form-control", @Name = "destino" })
+
+        </div>
+        <div>
+            <label>Escribe tu mensaje</label><br />
+            <textarea class="form-control" name="mensaje"></textarea>
+        </div><br />
+        <div class="form-group">
+            <input type="submit" value="Enviar mensaje" class="btn btn-success" />
+            <a href="~/Home/Index" class="btn btn-danger">Cancelar</a>
+        </div>
+
+    </form>
+
+    <div>
+        @if (ViewBag.msg != null)
+        {
+            <div class=" col-md-12 text-center">
+                <h3>Para: </h3>
+            </div>
+            <div class="col-md-12 d-flex">
+                @foreach (var ms in (List<COSA.Models.Mensaje>)ViewBag.msg)
+                {
+                    <h5>@ms.Mensaje1</h5>}
+            </div>}
+    </div>
+</div>
+

@@ -1,0 +1,50 @@
+﻿@model COSA.Models.Mensaje
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mensaje</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensaje1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensaje1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chat.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chat.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costos.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costos.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefonos.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefonos.Numero)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
